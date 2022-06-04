@@ -1,0 +1,40 @@
+.form-section {
+	max-width: 800px;
+	width: 100%;
+	padding: 50px;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.form-section .form-btn-submit {
+	background-color: transparent;
+	color: #20b274;
+	border: 1px solid #20b274;
+	width: 100%;
+	transition: all 0.3s ease-in-out;
+}
+
+.form-section .form-btn-submit:hover {
+	background-color: #20b274;
+	color: #fff;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.form-section .form-btn-reset {
+	background-color: #b22050;
+	border: 1px solid #b22050;
+	color: #fff;
+	opacity: 0.8;
+	width: 100%;
+	transition: all 0.3s ease-in-out;
+}
+
+.form-section .form-btn-reset:hover {
+	opacity: 1;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.insights {
+	font-size: 12px;
+	font-style: italic;
+	padding: 5px 2px 2px 2px;
+}
