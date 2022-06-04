@@ -1,10 +1,10 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { useState, useEffect } from 'react'
-import { Button } from 'react-bootstrap'
 import Loading from './components/Loading/Loading.jsx'
 import UserList from './components/UserList/UserList.jsx'
 import UserAddForm from './components/UserAddForm/UserAddForm.jsx'
+import Refresh from './components/Refresh/Refresh.jsx'
 
 const url = 'https://jsonplaceholder.typicode.com/users'
 
@@ -51,31 +51,6 @@ function App() {
 		)
 	}
 
-	if (users.length === 0) {
-		return (
-			<main>
-				<div className='home-title'>
-					<h2>Form Project</h2>
-					<div className='underline'></div>
-				</div>
-				<UserAddForm addUser={addUser} />
-				<div className='home-subtitle'>
-					<h2>{users.length} Users</h2>
-					<div className='underline'></div>
-				</div>
-				<div className='refresh-section'>
-					<p className='refresh-title'>
-						Clicking on 'Refresh' will generate the list of default
-						users again
-					</p>
-					<Button onClick={handleUsersList} className='refresh-btn'>
-						Refresh
-					</Button>
-				</div>
-			</main>
-		)
-	}
-
 	return (
 		<main>
 			<div className='home-title'>
@@ -84,10 +59,14 @@ function App() {
 			</div>
 			<UserAddForm addUser={addUser} />
 			<div className='home-subtitle'>
-				<h2>Users List</h2>
+				<h2>{users.length} Users</h2>
 				<div className='underline'></div>
 			</div>
-			<UserList users={users} removeUser={removeUser} />
+			{users.length === 0 ? (
+				<Refresh handleUsersList={handleUsersList} />
+			) : (
+				<UserList users={users} removeUser={removeUser} />
+			)}
 		</main>
 	)
 }

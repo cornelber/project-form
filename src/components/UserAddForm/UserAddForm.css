@@ -33,6 +33,11 @@
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
+.form-section .form-btn-submit:focus,
+.form-section .form-btn-reset:focus {
+	box-shadow: none !important;
+}
+
 .insights {
 	font-size: 12px;
 	font-style: italic;

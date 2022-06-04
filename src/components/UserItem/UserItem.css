@@ -1,5 +1,10 @@
 .user-item {
 	display: flex;
+	padding: 50px;
+}
+
+.user-item:hover {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .user-item .user-name {
@@ -43,4 +48,37 @@
 	height: 100%;
 	background-color: #20b274;
 	border-radius: 10px;
+}
+
+@media screen and (max-width: 633px) {
+	.user-item {
+		flex-direction: column;
+		padding: 50px 20px;
+	}
+	.user-item .user-name {
+		width: 100%;
+		padding-right: 0;
+		flex-direction: row;
+	}
+	.user-item .user-name h2 {
+		text-align: unset;
+	}
+	.user-item .user-name .user-delete-btn {
+		width: unset;
+	}
+	.user-item .user-info {
+		width: 100%;
+		padding-left: 20px;
+	}
+	.user-item .user-info p {
+		word-break: break-all;
+		white-space: normal;
+	}
+}
+
+@media screen and (max-width: 513px) {
+	.user-item .user-name {
+		flex-direction: column;
+		margin-bottom: 15px;
+	}
 }

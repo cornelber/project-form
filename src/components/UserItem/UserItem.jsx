@@ -8,7 +8,7 @@ const UserItem = ({ id, name, username, email, phone, removeUser }) => {
 	}
 
 	return (
-		<div className='user-item mb-5'>
+		<div className='user-item'>
 			<div className='user-name'>
 				<h2>{name}</h2>
 				<Button
