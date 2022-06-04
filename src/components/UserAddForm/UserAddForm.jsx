@@ -35,14 +35,23 @@ const UserAddForm = ({ addUser }) => {
 	const handleFormSubmit = e => {
 		e.preventDefault()
 
-		const user = {
-			name: formName,
-			email: formEmail,
-			username: formUserName,
-			phone: formPhone,
-		}
+		if (
+			formName === '' &&
+			formEmail === '' &&
+			formUserName === '' &&
+			formPhone === ''
+		) {
+			alert('Please fill in all the cells in the form!')
+		} else {
+			const user = {
+				name: formName,
+				email: formEmail,
+				username: formUserName,
+				phone: formPhone,
+			}
 
-		addUser(user)
+			addUser(user)
+		}
 	}
 
 	return (
