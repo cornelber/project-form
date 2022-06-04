@@ -11,6 +11,7 @@ const url = 'https://jsonplaceholder.typicode.com/users'
 function App() {
 	const [loading, setLoading] = useState(true)
 	const [users, setUsers] = useState([])
+	const [showScrollToTop, setShowScrollToTop] = useState(false)
 
 	const fetchData = () => {
 		fetch(url).then(res =>
@@ -39,6 +40,23 @@ function App() {
 		fetchData()
 	}
 
+	const goToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth',
+		})
+	}
+
+	useEffect(() => {
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > window.innerHeight / 2) {
+				setShowScrollToTop(true)
+			} else {
+				setShowScrollToTop(false)
+			}
+		})
+	}, [])
+
 	useEffect(() => {
 		fetchData()
 	}, [])
@@ -66,6 +84,11 @@ function App() {
 				<Refresh handleUsersList={handleUsersList} />
 			) : (
 				<UserList users={users} removeUser={removeUser} />
+			)}
+			{showScrollToTop && (
+				<button onClick={goToTop} className='scroll-to-top'>
+					<p>☝️</p>
+				</button>
 			)}
 		</main>
 	)
