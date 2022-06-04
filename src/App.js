@@ -35,6 +35,10 @@ function App() {
 		setUsers(newUsers)
 	}
 
+	const handleUsersList = () => {
+		fetchData()
+	}
+
 	useEffect(() => {
 		fetchData()
 	}, [])
@@ -43,6 +47,31 @@ function App() {
 		return (
 			<main>
 				<Loading />
+			</main>
+		)
+	}
+
+	if (users.length === 0) {
+		return (
+			<main>
+				<div className='home-title'>
+					<h2>Form Project</h2>
+					<div className='underline'></div>
+				</div>
+				<UserAddForm addUser={addUser} />
+				<div className='home-subtitle'>
+					<h2>{users.length} Users</h2>
+					<div className='underline'></div>
+				</div>
+				<div className='refresh-section'>
+					<p className='refresh-title'>
+						Clicking on 'Refresh' will generate the list of default
+						users again
+					</p>
+					<Button onClick={handleUsersList} className='refresh-btn'>
+						Refresh
+					</Button>
+				</div>
 			</main>
 		)
 	}

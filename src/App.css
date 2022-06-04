@@ -46,7 +46,37 @@ main .home-subtitle h2 {
 	color: #20b274;
 }
 
-.refresh-btn {
-	margin-top: 50px;
-	
+.refresh-section {
+	max-width: 800px;
+	width: 100%;
+	padding: 50px;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	margin-bottom: 100px;
+	text-align: center;
+}
+
+.refresh-section .refresh-title {
+	font-size: 22px;
+}
+
+.refresh-section .refresh-btn {
+	width: 100%;
+	background-color: #20b274;
+	color: #fff;
+	opacity: 0.8;
+	border: 1px solid #20b274;
+	transition: all 0.3s ease-in-out;
+}
+
+.refresh-section .refresh-btn:hover {
+	opacity: 1;
+	background-color: #20b274;
+	border: 1px solid #20b274;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.refresh-section .refresh-btn:focus {
+	background-color: #20b274;
+	color: #fff;
+	border: 1px solid #20b274;
 }
