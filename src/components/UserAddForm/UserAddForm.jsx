@@ -44,6 +44,7 @@ const UserAddForm = ({ addUser }) => {
 			alert('Please fill in all the cells in the form!')
 		} else {
 			const user = {
+				id: Date.now(),
 				name: formName,
 				email: formEmail,
 				username: formUserName,
